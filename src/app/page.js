@@ -271,10 +271,10 @@ export default function Home() {
             SIMPLE FILE SHARING
           </p>
           <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[5rem] font-bold text-black mb-[1rem] sm:mb-[1.5rem] leading-[1.1] px-[1rem]">
-            P2P Share;
+            Yoink
             <br />
             <span className="text-[2rem] sm:text-[3rem] md:text-[4rem] font-normal">
-              because less is more.
+              yoink it over.
             </span>
           </h1>
           <p className="text-[0.95rem] sm:text-[1.1rem] text-gray-600 max-w-[600px] mx-auto px-[1rem]">
