@@ -218,8 +218,8 @@ export default function Home() {
 
   return (
     <div className="min-h-[100vh] bg-[#f5f5f5] relative overflow-hidden">
-      {/* Decorative shapes */}
-      <div className="absolute top-[5vh] left-[5vw] w-[80px] h-[80px] opacity-10">
+      {/* Decorative shapes - hidden on mobile */}
+      <div className="hidden md:block absolute top-[5vh] left-[5vw] w-[80px] h-[80px] opacity-10">
         <svg
           viewBox="0 0 100 100"
           fill="none"
@@ -230,7 +230,7 @@ export default function Home() {
         </svg>
       </div>
 
-      <div className="absolute bottom-[10vh] right-[8vw] w-[100px] h-[100px] opacity-10">
+      <div className="hidden md:block absolute bottom-[10vh] right-[8vw] w-[100px] h-[100px] opacity-10">
         <svg
           viewBox="0 0 100 100"
           fill="none"
@@ -246,7 +246,7 @@ export default function Home() {
         </svg>
       </div>
 
-      <div className="absolute top-[50vh] left-[2vw] w-[60px] h-[60px] opacity-10">
+      <div className="hidden md:block absolute top-[50vh] left-[2vw] w-[60px] h-[60px] opacity-10">
         <svg
           viewBox="0 0 100 100"
           fill="none"
@@ -264,20 +264,20 @@ export default function Home() {
         </svg>
       </div>
 
-      <div className="max-w-[1200px] mx-auto px-[2rem] py-[4rem] relative z-10">
+      <div className="max-w-[1200px] mx-auto px-[1rem] sm:px-[2rem] py-[2rem] sm:py-[4rem] relative z-10">
         {/* Header */}
-        <div className="text-center mb-[4rem]">
-          <p className="text-[0.9rem] tracking-[0.2em] uppercase text-gray-500 mb-[1rem]">
+        <div className="text-center mb-[2rem] sm:mb-[4rem]">
+          <p className="text-[0.75rem] sm:text-[0.9rem] tracking-[0.2em] uppercase text-gray-500 mb-[0.5rem] sm:mb-[1rem]">
             SIMPLE FILE SHARING
           </p>
-          <h1 className="text-[4rem] md:text-[5rem] font-bold text-black mb-[1.5rem] leading-[1.1]">
+          <h1 className="text-[2.5rem] sm:text-[4rem] md:text-[5rem] font-bold text-black mb-[1rem] sm:mb-[1.5rem] leading-[1.1] px-[1rem]">
             P2P Share;
             <br />
-            <span className="text-[3rem] md:text-[4rem] font-normal">
+            <span className="text-[2rem] sm:text-[3rem] md:text-[4rem] font-normal">
               because less is more.
             </span>
           </h1>
-          <p className="text-[1.1rem] text-gray-600 max-w-[600px] mx-auto">
+          <p className="text-[0.95rem] sm:text-[1.1rem] text-gray-600 max-w-[600px] mx-auto px-[1rem]">
             Secure peer-to-peer file sharing. No servers, no tracking, no
             hassle.
           </p>
@@ -286,17 +286,17 @@ export default function Home() {
         {/* Main Card */}
         <div className="max-w-[800px] mx-auto bg-white rounded-[1rem] shadow-lg border-[1px] border-gray-200 overflow-hidden">
           {/* Your Code Section */}
-          <div className="p-[3rem] border-b-[1px] border-gray-200 bg-gradient-to-br from-[#84abd6]/5 to-[#feffb9]/5">
-            <div className="text-center mb-[2rem]">
-              <h2 className="text-[1rem] tracking-[0.15em] uppercase text-gray-500 mb-[1rem]">
+          <div className="p-[1.5rem] sm:p-[3rem] border-b-[1px] border-gray-200 bg-gradient-to-br from-[#84abd6]/5 to-[#feffb9]/5">
+            <div className="text-center mb-[1.5rem] sm:mb-[2rem]">
+              <h2 className="text-[0.85rem] sm:text-[1rem] tracking-[0.15em] uppercase text-gray-500 mb-[0.75rem] sm:mb-[1rem]">
                 Your Code
               </h2>
               <div className="inline-block">
-                <div className="text-[5rem] font-bold tracking-[0.3em] text-[#84abd6] font-mono">
+                <div className="text-[3.5rem] sm:text-[5rem] font-bold tracking-[0.3em] text-[#84abd6] font-mono">
                   {myCode || "----"}
                 </div>
               </div>
-              <p className="text-[0.9rem] text-gray-500 mt-[1rem]">
+              <p className="text-[0.85rem] sm:text-[0.9rem] text-gray-500 mt-[0.75rem] sm:mt-[1rem] px-[1rem]">
                 Share this code with others to connect
               </p>
             </div>
@@ -305,7 +305,7 @@ export default function Home() {
               <button
                 onClick={copyToClipboard}
                 disabled={!myCode}
-                className="px-[3rem] py-[1rem] bg-black text-white rounded-[0.5rem] font-medium hover:bg-gray-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed text-[1rem]"
+                className="px-[2rem] sm:px-[3rem] py-[0.875rem] sm:py-[1rem] bg-black text-white rounded-[0.5rem] font-medium hover:bg-gray-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed text-[0.95rem] sm:text-[1rem] w-full sm:w-auto max-w-[250px]"
               >
                 {copySuccess ? "✓ Copied!" : "Copy Code"}
               </button>
@@ -313,26 +313,27 @@ export default function Home() {
           </div>
 
           {/* Connect Section */}
-          <div className="p-[3rem] border-b-[1px] border-gray-200">
-            <h2 className="text-[1rem] tracking-[0.15em] uppercase text-gray-500 mb-[2rem] text-center">
+          <div className="p-[1.5rem] sm:p-[3rem] border-b-[1px] border-gray-200">
+            <h2 className="text-[0.85rem] sm:text-[1rem] tracking-[0.15em] uppercase text-gray-500 mb-[1.5rem] sm:mb-[2rem] text-center">
               Connect to a Peer
             </h2>
 
-            <div className="flex flex-col items-center gap-[1.5rem]">
+            <div className="flex flex-col items-center gap-[1.25rem] sm:gap-[1.5rem]">
               <input
                 type="text"
+                inputMode="numeric"
                 value={remoteCode}
                 onChange={handleCodeInput}
                 placeholder="0000"
                 disabled={connected}
                 maxLength={4}
-                className="w-[250px] text-center text-[3rem] font-bold font-mono tracking-[0.5em] p-[1rem] border-[2px] border-gray-300 rounded-[0.5rem] focus:outline-none focus:border-[#84abd6] disabled:bg-gray-50 disabled:text-gray-400"
+                className="w-full max-w-[250px] text-center text-[2.5rem] sm:text-[3rem] font-bold font-mono tracking-[0.4em] sm:tracking-[0.5em] p-[0.875rem] sm:p-[1rem] border-[2px] border-gray-300 rounded-[0.5rem] focus:outline-none focus:border-[#84abd6] disabled:bg-gray-50 disabled:text-gray-400"
               />
 
               <button
                 onClick={connectToPeer}
                 disabled={connected || remoteCode.length !== 4}
-                className="px-[3rem] py-[1rem] bg-[#84abd6] text-white rounded-[0.5rem] font-medium hover:bg-[#6a93bd] transition-all disabled:opacity-30 disabled:cursor-not-allowed text-[1rem]"
+                className="px-[2rem] sm:px-[3rem] py-[0.875rem] sm:py-[1rem] bg-[#84abd6] text-white rounded-[0.5rem] font-medium hover:bg-[#6a93bd] transition-all disabled:opacity-30 disabled:cursor-not-allowed text-[0.95rem] sm:text-[1rem] w-full sm:w-auto max-w-[250px]"
               >
                 {connected ? "Connected" : "Connect"}
               </button>
@@ -344,7 +345,7 @@ export default function Home() {
                     connected ? "bg-green-500" : "bg-gray-300"
                   }`}
                 ></div>
-                <span className="text-[0.9rem] text-gray-600">
+                <span className="text-[0.85rem] sm:text-[0.9rem] text-gray-600">
                   {connected ? "Connected" : "Waiting to connect"}
                 </span>
               </div>
@@ -353,21 +354,21 @@ export default function Home() {
 
           {/* Chat Section */}
           {connected && (
-            <div className="p-[3rem]">
-              <h2 className="text-[1rem] tracking-[0.15em] uppercase text-gray-500 mb-[1.5rem]">
+            <div className="p-[1.5rem] sm:p-[3rem]">
+              <h2 className="text-[0.85rem] sm:text-[1rem] tracking-[0.15em] uppercase text-gray-500 mb-[1.25rem] sm:mb-[1.5rem]">
                 Messages
               </h2>
 
-              <div className="h-[250px] overflow-y-auto mb-[1.5rem] p-[1rem] bg-gray-50 rounded-[0.5rem]">
+              <div className="h-[200px] sm:h-[250px] overflow-y-auto mb-[1.25rem] sm:mb-[1.5rem] p-[0.875rem] sm:p-[1rem] bg-gray-50 rounded-[0.5rem]">
                 {messages.length === 0 ? (
-                  <div className="text-center text-gray-400 mt-[4rem] text-[0.9rem]">
+                  <div className="text-center text-gray-400 mt-[3rem] sm:mt-[4rem] text-[0.85rem] sm:text-[0.9rem]">
                     No messages yet
                   </div>
                 ) : (
                   messages.map((msg, idx) => (
                     <div
                       key={idx}
-                      className={`mb-[1rem] ${
+                      className={`mb-[0.875rem] sm:mb-[1rem] ${
                         msg.type === "sent"
                           ? "text-right"
                           : msg.type === "received"
@@ -376,12 +377,12 @@ export default function Home() {
                       }`}
                     >
                       <div
-                        className={`inline-block px-[1.5rem] py-[0.75rem] rounded-[0.5rem] max-w-[80%] ${
+                        className={`inline-block px-[1rem] sm:px-[1.5rem] py-[0.625rem] sm:py-[0.75rem] rounded-[0.5rem] max-w-[85%] sm:max-w-[80%] text-[0.9rem] sm:text-[1rem] ${
                           msg.type === "sent"
                             ? "bg-black text-white"
                             : msg.type === "received"
                             ? "bg-[#84abd6] text-white"
-                            : "bg-gray-200 text-gray-600 text-[0.85rem] italic"
+                            : "bg-gray-200 text-gray-600 text-[0.8rem] sm:text-[0.85rem] italic"
                         }`}
                       >
                         {msg.text}
@@ -391,33 +392,33 @@ export default function Home() {
                 )}
               </div>
 
-              <div className="flex gap-[1rem] mb-[2rem]">
+              <div className="flex flex-col sm:flex-row gap-[0.75rem] sm:gap-[1rem] mb-[1.5rem] sm:mb-[2rem]">
                 <input
                   type="text"
                   value={messageInput}
                   onChange={(e) => setMessageInput(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Type a message..."
-                  className="flex-1 px-[1.5rem] py-[1rem] border-[1px] border-gray-300 rounded-[0.5rem] focus:outline-none focus:border-[#84abd6] text-[1rem]"
+                  className="flex-1 px-[1rem] sm:px-[1.5rem] py-[0.875rem] sm:py-[1rem] border-[1px] border-gray-300 rounded-[0.5rem] focus:outline-none focus:border-[#84abd6] text-[0.95rem] sm:text-[1rem]"
                 />
                 <button
                   onClick={sendMessage}
                   disabled={!messageInput.trim()}
-                  className="px-[2rem] py-[1rem] bg-black text-white rounded-[0.5rem] font-medium hover:bg-gray-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed"
+                  className="px-[1.5rem] sm:px-[2rem] py-[0.875rem] sm:py-[1rem] bg-black text-white rounded-[0.5rem] font-medium hover:bg-gray-800 transition-all disabled:opacity-30 disabled:cursor-not-allowed text-[0.95rem] sm:text-[1rem]"
                 >
                   Send
                 </button>
               </div>
 
               <div>
-                <label className="block text-[0.9rem] tracking-[0.1em] uppercase text-gray-500 mb-[1rem]">
+                <label className="block text-[0.8rem] sm:text-[0.9rem] tracking-[0.1em] uppercase text-gray-500 mb-[0.75rem] sm:mb-[1rem]">
                   Send File
                 </label>
                 <input
                   ref={fileInputRef}
                   type="file"
                   onChange={handleFileSelect}
-                  className="block w-full text-[0.9rem] file:mr-[1rem] file:py-[0.75rem] file:px-[1.5rem] file:rounded-[0.5rem] file:border-0 file:bg-black file:text-white file:font-medium hover:file:bg-gray-800 file:cursor-pointer border-[1px] border-gray-300 rounded-[0.5rem] cursor-pointer"
+                  className="block w-full text-[0.85rem] sm:text-[0.9rem] file:mr-[0.75rem] sm:file:mr-[1rem] file:py-[0.625rem] sm:file:py-[0.75rem] file:px-[1rem] sm:file:px-[1.5rem] file:rounded-[0.5rem] file:border-0 file:bg-black file:text-white file:font-medium hover:file:bg-gray-800 file:cursor-pointer border-[1px] border-gray-300 rounded-[0.5rem] cursor-pointer"
                 />
               </div>
             </div>
@@ -425,7 +426,7 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <div className="text-center mt-[3rem] text-gray-500 text-[0.85rem]">
+        <div className="text-center mt-[2rem] sm:mt-[3rem] text-gray-500 text-[0.8rem] sm:text-[0.85rem] px-[1rem]">
           <p>End-to-end encrypted. No data stored on servers.</p>
         </div>
       </div>
